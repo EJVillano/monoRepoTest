@@ -11,6 +11,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <a href="https://www.typescriptlang.org/" target="_blank">
       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
     </a>
+    <h1>"${import.meta.env.VITE_API_URL}"</h1>
     <h1>Vite + TypeScript</h1>
     <div class="card">
       <button id="counter" type="button"></button>
@@ -24,7 +25,7 @@ const button = document.querySelector<HTMLButtonElement>('#counter')
 
 button?.addEventListener('click', async () => {
   try {
-    const res = await fetch('http://localhost:5000/')
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/`)
     const data = await res.json()
     alert(data.message)
   } catch (err) {

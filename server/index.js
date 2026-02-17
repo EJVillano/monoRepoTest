@@ -8,5 +8,5 @@ app.use(cors())
 app.get("/", (req, res) => {
   res.json({ message: "Server working" })
 })
-
-app.listen(5000, () => console.log("API running on 5000"))
+const PORT = process.env.PORT || 5000
+app.listen(5000, () => console.log(`API running on ${PORT}`))
