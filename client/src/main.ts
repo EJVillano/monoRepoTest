@@ -25,7 +25,7 @@ const button = document.querySelector<HTMLButtonElement>('#counter')
 
 button?.addEventListener('click', async () => {
   try {
-    const res = await fetch(`${import.meta.env.VITE_API_URL}/`)
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/test`)
     const data = await res.json()
     alert(data.message)
   } catch (err) {
